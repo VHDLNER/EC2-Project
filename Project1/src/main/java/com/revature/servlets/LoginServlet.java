@@ -31,39 +31,39 @@ public class LoginServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
-		String email = request.getParameter("email");
-		String pass = request.getParameter("password");
-		String m = request.getParameter("role");
+// 		String email = request.getParameter("email");
+// 		String pass = request.getParameter("password");
+// 		String m = request.getParameter("role");
 
-		String isManager = m;
+// 		String isManager = m;
 		
 
-		//System.out.println("email: " + email + " | Password: " + pass );
+// 		//System.out.println("email: " + email + " | Password: " + pass );
 		
-		EmployeeDao empDao = new EmployeeDaoImpl();
-		if((email!=""||pass!="" )&& empDao.getEmployeeByEmail(email).getPassword().equals(pass)) 
-		{	
-			Employee emp=null;
-			emp = empDao.getEmployeeByEmail(email);
-			log.info("emp details "+emp+ " isManager:"+isManager);				
-			if(emp.getManagerId()==0  ) 
-			{
-				System.out.println("Verified Employee Login");
-			    request.getRequestDispatcher("/Views/employeeHome.html").forward(request, response);
-			}
-			else {
-				  log.info("Verified Manager Login");
-				 // System.out.println("Verified Manager Login");
-				  request.getRequestDispatcher("/Views/managerHome.html").forward(request, response);		
-			}		
-		} 
+// 		EmployeeDao empDao = new EmployeeDaoImpl();
+// 		if((email!=""||pass!="" )&& empDao.getEmployeeByEmail(email).getPassword().equals(pass)) 
+// 		{	
+// 			Employee emp=null;
+// 			emp = empDao.getEmployeeByEmail(email);
+// 			log.info("emp details "+emp+ " isManager:"+isManager);				
+// 			if(emp.getManagerId()==0  ) 
+// 			{
+// 				System.out.println("Verified Employee Login");
+// 			    request.getRequestDispatcher("/Views/employeeHome.html").forward(request, response);
+// 			}
+// 			else {
+// 				  log.info("Verified Manager Login");
+// 				 // System.out.println("Verified Manager Login");
+// 				  request.getRequestDispatcher("/Views/managerHome.html").forward(request, response);		
+// 			}		
+// 		} 
 		
-		else {
-			 out.print("Unverified Login  To Register press Register ");
+// 		else {
+// 			 out.print("Unverified Login  To Register press Register ");
 			//System.out.println(" Unverified Login  To Register press Register ");
 			RequestDispatcher rd = request.getRequestDispatcher("/Views/Login.html");
 			rd.include(request, response);
-		}	
+// 		}	
 		out.close();
 
     }

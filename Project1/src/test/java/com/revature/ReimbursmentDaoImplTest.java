@@ -34,18 +34,16 @@ public void getRequestByIdTest() {
 }
 
 	
-	@Test
-	public void createReimbursmentTest() {
-		Reimbursment reimTest2=new Reimbursment(7,4,"Meeting",400,"0",0);
-
-		assertEquals(1,reimDao.createReimbusment(reimTest2));//return 1 if created
+// 	@Test
+// 	public void createReimbursmentTest() {
+// 		Reimbursment reimTest2=new Reimbursment(7,4,"Meeting",400,"0",0);
+// 		assertEquals(1,reimDao.createReimbusment(reimTest2));//return 1 if created		
+// 	}
+// 	@Test
+// 	public void updateReimbursmentTest() {
+// 		assertEquals(1,reimDao.UpdateReimbursment("1",6,0));//return 1 if updated to approved("1")
 		
-	}
-	@Test
-	public void updateReimbursmentTest() {
-		assertEquals(1,reimDao.UpdateReimbursment("1",6,0));//return 1 if updated to approved("1")
-		
-	}
+// 	}
 
 	@After
 	public void afterMethod() {
